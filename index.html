@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopprettify | Social Media Hub</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Poppins, sans-serif;
+      }
+
+      body {
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 800px;
+        width: 100%;
+        background: #0f0e17;
+        border-radius: 20px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        animation: fadeIn 0.8s ease;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero {
+        position: relative;
+        text-align: center;
+        height: 480px;
+        width: 70%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        color: white;
+        text-align: ;
+        padding: 20px;
+        margin-top: 20px;
+        overflow: hidden;
+      }
+
+      .hero-image {
+        position: absolute;
+        border-radius: 10px;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+      }
+
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
+        z-index: 1;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 3;
+        max-width: 90%;
+      }
+      .hero-title {
+        font-size: 1.8rem;
+        margin-bottom: 5px;
+        margin-top: 350px;
+        text-align: center;
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+        font-weight: 700;
+        letter-spacing: 2px;
+      }
+
+      .hero-subtitle {
+        font-size: 1.3rem;
+        max-width: 600px;
+        margin: 0 auto;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        font-weight: 300;
+      }
+
+      .social-links {
+        display: flex;
+        justify-content: center;
+        padding: 30px 0;
+        gap: 30px;
+        background: #0f0e17;
+      }
+
+      .social-link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+        color: white;
+        transition: transform 0.3s ease;
+      }
+
+      .social-link:hover {
+        transform: translateY(-5px);
+      }
+
+      .social-icon {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        margin-bottom: 10px;
+        color: white;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .tiktok {
+        background: linear-gradient(45deg, #fe2c55, #25f4ee);
+      }
+
+      .instagram {
+        background: linear-gradient(
+          45deg,
+          #f09433,
+          #e6683c,
+          #dc2743,
+          #cc2366,
+          #bc1888
+        );
+      }
+
+      .whatsapp-section {
+        padding: 40px 20px;
+        text-align: center;
+        background: #0f0e17;
+      }
+
+      .whatsapp-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 16px 32px;
+        background: #25d366;
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.2rem;
+        border-radius: 50px;
+        box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .whatsapp-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+        background: #20bd5c;
+      }
+
+      .whatsapp-btn i {
+        margin-right: 10px;
+        font-size: 1.5rem;
+      }
+
+      .video-section {
+        padding: 30px 20px;
+        background: #f8f9fa;
+        text-align: center;
+      }
+
+      .video-title {
+        margin-bottom: 20px;
+        font-size: 1.5rem;
+        color: #333;
+      }
+
+      .tiktok-embed-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 600px;
+        background: #f8f9fa;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        padding: 15px;
+      }
+
+      .tiktok-embed-placeholder {
+        text-align: center;
+        padding: 20px;
+        color: #555;
+      }
+
+      .tiktok-embed-placeholder i {
+        font-size: 3rem;
+        color: #fe2c55;
+        margin-bottom: 15px;
+      }
+
+      @media (max-width: 768px) {
+        .hero {
+          height: 350px;
+        }
+
+        .hero-title {
+          font-size: 2.5rem;
+        }
+
+        .hero-subtitle {
+          font-size: 1.2rem;
+        }
+
+        .social-links {
+          flex-direction: column;
+          align-items: center;
+          gap: 20px;
+        }
+
+        .tiktok-embed-container {
+          min-height: 500px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero {
+          height: 300px;
+        }
+
+        .hero-title {
+          font-size: 2rem;
+        }
+
+        .hero-subtitle {
+          font-size: 1rem;
+        }
+
+        .tiktok-embed-container {
+          min-height: 400px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="hero">
+        <img src="Pretiffy Pic.jpg" alt="Hero Image" class="hero-image" />
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <h1 class="hero-title">AFRO HEADBAND WIG ($30)</h1>
+          <p class="hero-subtitle">No salon needed- Install in 2 minutes 😅</p>
+        </div>
+      </div>
+      <div class="whatsapp-section">
+        <a href="https://wa.me/message/S5ZKJPIU4AUCG1" class="whatsapp-btn">
+          <i class="fab fa-whatsapp"></i> GET MY WIG NOW!! (click)
+        </a>
+      </div>
+
+      <div class="social-links">
+        <a
+          href="https://www.tiktok.com/@prettify.looks?_t=ZS-8zPiUQk64fQ&_r=1"
+          class="social-link"
+          target="_blank"
+        >
+          <div class="social-icon tiktok">
+            <i class="fab fa-tiktok"></i>
+          </div>
+          <span>Follow us on TikTok</span>
+        </a>
+      </div>
+
+      <div class="video-section">
+        <h2 class="video-title">See Our Products in Action</h2>
+        <div class="tiktok-embed-container">
+          <!-- TikTok Video Embed -->
+          <blockquote
+            class="tiktok-embed"
+            cite="https://www.tiktok.com/@prettify.looks/video/7539830639437122823"
+            data-video-id="7539830639437122823"
+            style="max-width: 605px; min-width: 325px"
+          >
+            <section>
+              <a
+                target="_blank"
+                title="@prettify.looks"
+                href="https://www.tiktok.com/@prettify.looks?refer=embed"
+                >@prettify.looks</a
+              >
+              <p>
+                Afro Headband wig going for $30. Send a DM to place your order.
+                We now have Nationwide delivery!!!🥳
+              </p>
+              <a
+                target="_blank"
+                title="♬ original sound - Luvuyo SMA🦅"
+                href="https://www.tiktok.com/music/original-sound-7520646851089025798?refer=embed"
+                >♬ original sound - Luvuyo SMA🦅</a
+              >
+            </section>
+          </blockquote>
+          <script async src="https://www.tiktok.com/embed.js"></script>
+          >
+          <script async src="https://www.tiktok.com/embed.js"></script>
+
+          <!-- Fallback in case the embed doesn't load -->
+          <div class="tiktok-embed-placeholder" style="display: none">
+            <i class="fab fa-tiktok"></i>
+            <p>Having trouble loading the TikTok video?</p>
+            <p>
+              You can view it directly on
+              <a
+                href="https://www.tiktok.com/@prettify.looks/video/7539830639437122823?is_from_webapp=1&sender_device=pc&web_id=7451957901558171141"
+                target="_blank"
+                >TikTok</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Simple animation on page load
+      document.addEventListener("DOMContentLoaded", function () {
+        const elements = document.querySelectorAll(
+          ".social-link, .whatsapp-btn"
+        );
+        elements.forEach((element, index) => {
+          element.style.animation = `fadeIn 0.5s ease ${
+            index * 0.2 + 0.5
+          }s forwards`;
+          element.style.opacity = 0;
+        });
+
+        // Check if TikTok embed loaded properly
+        setTimeout(function () {
+          const tiktokEmbed = document.querySelector(".tiktok-embed iframe");
+          const placeholder = document.querySelector(
+            ".tiktok-embed-placeholder"
+          );
+
+          if (!tiktokEmbed || tiktokEmbed.offsetHeight === 0) {
+            if (placeholder) {
+              placeholder.style.display = "block";
+            }
+          }
+        }, 3000);
+      });
+    </script>
+  </body>
+</html>
