@@ -18,7 +18,7 @@
 
       body {
         background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-        min-height: 100vh;
+        line-height: 1, 7;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -27,7 +27,6 @@
 
       .container {
         max-width: 800px;
-        width: 100%;
         background: #0f0e17;
         border-radius: 20px;
         box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
@@ -49,17 +48,15 @@
       .hero {
         position: relative;
         text-align: center;
-        height: 480px;
-        width: 70%;
+        min-height: 60vh;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: auto;
         color: white;
-        text-align: ;
+        text-align: center;
         padding: 20px;
-        margin-top: 20px;
-        overflow: hidden;
+        margin-top: 4rem 2rem;
+        background-size: cover;
       }
 
       .hero-image {
@@ -69,7 +66,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: contain;
         z-index: 1;
       }
 
@@ -86,10 +83,10 @@
       .hero-content {
         position: relative;
         z-index: 3;
-        max-width: 90%;
+        max-width: 800px;
       }
       .hero-title {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
         margin-bottom: 5px;
         margin-top: 350px;
         text-align: center;
@@ -326,20 +323,6 @@
           <script async src="https://www.tiktok.com/embed.js"></script>
           >
           <script async src="https://www.tiktok.com/embed.js"></script>
-
-          <!-- Fallback in case the embed doesn't load -->
-          <div class="tiktok-embed-placeholder" style="display: none">
-            <i class="fab fa-tiktok"></i>
-            <p>Having trouble loading the TikTok video?</p>
-            <p>
-              You can view it directly on
-              <a
-                href="https://www.tiktok.com/@prettify.looks/video/7539830639437122823?is_from_webapp=1&sender_device=pc&web_id=7451957901558171141"
-                target="_blank"
-                >TikTok</a
-              >
-            </p>
-          </div>
         </div>
       </div>
     </div>
@@ -374,3 +357,4 @@
     </script>
   </body>
 </html>
+
